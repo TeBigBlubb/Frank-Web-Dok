@@ -1,0 +1,85 @@
+{% extends "_bildlayout" %}
+
+{% block content %}
+
+{% set records = craft.entries.section('bilder').datum(['and', '>= 2021-01-01', '< 2021-12-31']).all() %}
+{%if records%}
+<h4 onclick="AbschnitteGaleries2021()" class="GalerieJahr">2021</h4>
+<div class="gallery" id="s2021">
+    {% for entries in records|batch(records|length/2)%}
+        <div class="column">
+            {% for entry in entries %}
+                {% set bild = entry.bild.one() %}
+                    <img src="{{ bild.url }}" alt="{{ entry.title }}">
+            {% endfor %}
+        </div>
+    {% endfor %}
+<p onclick="AbschnitteGaleries2021()" class="GalerieJahr">schliessen</p>
+</div>
+{% endif %}
+
+{% set records = craft.entries.section('bilder').datum(['and', '>= 2020-01-01', '< 2020-12-31']).all() %}
+{%if records%}
+<h4 onclick="AbschnitteGaleries2020()" class="GalerieJahr">2020</h4>
+<div class="gallery" id="s2020">
+    {% for entries in records|batch(records|length/2)%}
+        <div class="column">
+            {% for entry in entries %}
+                {% set bild = entry.bild.one() %}
+                    <img src="{{ bild.url }}" alt="{{ entry.title }}">
+            {% endfor %}
+        </div>
+    {% endfor %}
+<p onclick="AbschnitteGaleries2020()" class="GalerieJahr">schliessen</p>
+</div>
+{% endif %}
+
+{% set records = craft.entries.section('bilder').datum(['and', '>= 2019-01-01', '< 2019-12-31']).all() %}
+{%if records%}
+<h4 onclick="AbschnitteGaleries2019()" class="GalerieJahr">2019</h4>
+<div class="gallery" id="s2019">
+    {% for entries in records|batch(records|length/2)%}
+        <div class="column">
+            {% for entry in entries %}
+                {% set bild = entry.bild.one() %}
+                    <img src="{{ bild.url }}" alt="{{ entry.title }}">
+            {% endfor %}
+        </div>
+    {% endfor %}
+<p onclick="AbschnitteGaleries2019()" class="GalerieJahr">schliessen</p>
+</div>
+{% endif %}
+
+{% set records = craft.entries.section('bilder').datum(['and', '>= 2018-01-01', '< 2018-12-31']).all() %}
+{%if records%}
+<h4 onclick="AbschnitteGaleries2018()" class="GalerieJahr">2018</h4>
+<div class="gallery" id="s2018">
+    {% for entries in records|batch(records|length/2)%}
+        <div class="column">
+            {% for entry in entries %}
+                {% set bild = entry.bild.one() %}
+                    <img src="{{ bild.url }}" alt="{{ entry.title }}">
+            {% endfor %}
+        </div>
+    {% endfor %}
+<p onclick="AbschnitteGaleries2018()" class="GalerieJahr">schliessen</p>
+</div>
+{% endif %}
+
+{% set records = craft.entries.section('bilder').datum(['and', '>= 2017-01-01', '< 2017-12-31']).all() %}
+{%if records%}
+<h4 onclick="AbschnitteGaleries2017()" class="GalerieJahr">2017</h4>
+<div class="gallery" id="s2017">
+    {% for entries in records|batch(records|length/2)%}
+        <div class="column">
+            {% for entry in entries %}
+                {% set bild = entry.bild.one() %}
+                    <img src="{{ bild.url }}" alt="{{ entry.title }}">
+            {% endfor %}
+        </div>
+    {% endfor %}
+<p onclick="AbschnitteGaleries2017()" class="GalerieJahr">schliessen</p>
+</div>
+{% endif %}
+
+{% endblock %}
