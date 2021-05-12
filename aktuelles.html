@@ -1,0 +1,28 @@
+{% extends "_layout" %}
+
+{% block content %}
+{% for entry in craft.entries.section('news')|batch(3) %}
+    <div class="row">
+    {% for value in entry %}
+        <div class="col l4 m12 s12">
+            <div> {{ value.datum|date("d.m.Y") }} </div>
+            <h3>{{ value.title }}</h3>
+            <div class="text"><p>{{ value.textnews }}</p></div>
+            {% if value.newsbild | length %}
+                {% set bild = value.newsbild.one() %}
+                <img class="news-image" src="{{ bild.url }}" alt="{{ value.title }}">
+            {% endif %}
+            {% if value.newsvid | length %}
+                <div class="videoWrapper">
+                <iframe width="560" height="315" src=" {{value.newsvid}} " 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+                </div>
+            {% endif %} 
+         </div>
+    {% endfor %}
+    </div>
+{% endfor %}    
+
+
+{% endblock %}
