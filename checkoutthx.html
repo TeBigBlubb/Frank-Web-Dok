@@ -1,0 +1,8 @@
+{% extends "_checkoutlayout" %}
+
+{% block content %}
+<p>Danke {{ craft.app.request.getQueryParam('from') }}!<br>
+Deine Bestellung ist bei uns eingetroffen und wir senden es so bald wie möglich zu dir.
+</p>
+
+        {% endblock %}

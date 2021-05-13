@@ -1,0 +1,17 @@
+{% extends "_shoplayout" %}
+
+{% block content %}
+
+{% for entry in craft.entries.section('shop').level(1).all()|batch(3)%}
+    <div class="row">
+    {% for value in entry %}
+        <div class="col l4 m12 s12">
+         <h3>{{value.title}}</h3>
+         {% set bild = value.artikelbild.one() %}
+	<a href="{{value.shoplink}}"><img class="news-image" src="{{ bild.url }}" alt="{{ value.title }}"></a>
+         </div>
+    {% endfor %}
+    </div>
+{% endfor %}
+
+{% endblock %}

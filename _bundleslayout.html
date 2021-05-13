@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-<meta name="description" content="Frank. ist eine Gruppe junger Musiker, die mit ihrem kreativen Sound das 
-    Tanzbein zum Schwingen bringt. Mit fetzigen Saxophon-Soli, kuscheligen Balladen 
-    und vielen vom Ska/Reggae geprägten Beats, bringen die Frank.en frischen Wind in 
-    die Ska-Pop Szene."/>
+<meta name="description" content="	Frank. triffst du überall. Frank. spülen mit dir an der Bar deine Sorgen runter oder bitten dich zum Maitanz. 
+	Sie winken dir von der anderen Strassenseite und tanzen an deinem Geburtstagsfest. Frank. sind einfach. Und machen, worauf 
+	sie Lust haben. Wo andere noch lange über Style und Musikstil diskutieren, spielen sie frei auf. Funk? Jazz? Ska? Who cares. 
+	Hauptsache es groovt. Hauptsache FRANK."/>
 <meta name="robots" content="index, follow"/>
 <meta property="og:title" content="Frank.Band"/>
 <meta property="og:image" content="https://frank-band.ch/img/frank-band.jpg"/>
-<meta property="og:description" content="Frank. ist eine Gruppe junger Musiker, die mit ihrem kreativen Sound das 
-    Tanzbein zum Schwingen bringt. Mit fetzigen Saxophon-Soli, kuscheligen Balladen 
-    und vielen vom Ska/Reggae geprägten Beats, bringen die Frank.en frischen Wind in 
-    die Ska-Pop Szene."/>
+<meta property="og:description" content="	Frank. triffst du überall. Frank. spülen mit dir an der Bar deine Sorgen runter oder bitten dich zum Maitanz. 
+	Sie winken dir von der anderen Strassenseite und tanzen an deinem Geburtstagsfest. Frank. sind einfach. Und machen, worauf 
+	sie Lust haben. Wo andere noch lange über Style und Musikstil diskutieren, spielen sie frei auf. Funk? Jazz? Ska? Who cares. 
+	Hauptsache es groovt. Hauptsache FRANK."/>
 <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
@@ -29,6 +29,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Enriqueta:400,700|Podkova" rel="stylesheet">
 <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 </head>
 <body>
 <div id="sidenav">
@@ -57,15 +58,19 @@
     <div class="container">
         <div class="center">
             <br>
-            <h1>Bilder</h1>
+            <h1>Aktionen</h1>
         </div>
     </div>
 </div>
 
 <div class="section">
     <div class="container">
-                {% block content %}
-                {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+
     </div>
 </div>
 
@@ -117,5 +122,16 @@
 <script src="js/materialize.js"></script>
 <script src="js/script.js"></script>
 
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.single-item').slick();
+    });
+    </script>
+
 </body>
 </html>
+

@@ -1,0 +1,63 @@
+{% extends "_kleidunglayout" %}
+
+{% block content %}
+
+{%set KleiderQuery = craft.entries()
+	.section('shop')
+	.descendantOf(245)
+	%}
+
+{% set entries = KleiderQuery.all() %}
+
+    {% for entry in entries|batch(3)%}
+    <div class="row">
+		{% for entry in entries%}
+        <div class="col l4 m12 s12">
+        <h4>{{entry.title}}</h4>
+		{% set slides = entry.artikelbild.limit(3) %}
+		{% if slides %}
+		<div class="single-item">
+{# Output slides, using the same "slides" variable #}
+		{% for slide in slides %}
+		<div><img class="news-image mySlides" src="{{ slide.url }}" alt="{{ slide.title }}"></div>
+		{% endfor %}
+		</div>
+		{% endif %}		
+		<h6>{{entry.produktebeschreibung}}</h6>
+    	<h6>Preis: {{entry.artikelpreis}} CHF</h6>
+		<h6>Bestellnummer: {{entry.id}}</h6>
+
+<!--		<p onclick="groesse({{loop.index}})">Grösse</p>
+		<form id="{{loop.index}}"class="gallery" action="" method="post">
+		<ul>
+			<li><label class="container">XS
+				<input type="radio" checked="checked" name="radio">
+				<span class="checkmark"></span>
+			  </label></li>
+			  <li><label class="container">S
+				<input type="radio" checked="checked" name="radio">
+				<span class="checkmark"></span>
+			  </label></li>			
+			  <li><label class="container">M
+				<input type="radio" checked="checked" name="radio">
+				<span class="checkmark"></span>
+			  </label></li>
+			<li><label class="container">L
+				<input type="radio" checked="checked" name="radio">
+				<span class="checkmark"></span>
+			  </label></li>			
+			  <li><label class="container">XL
+				<input type="radio" checked="checked" name="radio">
+				<span class="checkmark"></span>
+			  </label></li>
+		</ul>
+		<input type="submit" value="In den Warenkorb">
+		</form>		-->
+		</div>
+
+	{%endfor%}
+		</div>
+    {% endfor %}
+
+{% endblock %}
+
