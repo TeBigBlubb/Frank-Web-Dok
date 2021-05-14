@@ -221,7 +221,8 @@ h3 {
 }
 
 /* The dots/bullets/indicators */
-/*.dot {
+/*
+.dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -244,3 +245,4 @@ h3 {
     -ms-user-select: none;
     user-select: none;
 }
+*/
